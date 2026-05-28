@@ -1,0 +1,74 @@
+Micro-Sensitive Map User Guide
+
+Basic Information
+-----------------
+- Title: Micro-Sensitive Map
+- Platform: Processing (Java Mode)
+- Version: v1.0
+- Creator: @iSDAGE
+- Last Updated: 2024.04
+
+Project Overview
+----------------
+Micro-Sensitive Map is a generative art experiment driven by sound and mouse interaction.
+Each dot "breathes" like a living cell. When the user moves closer or makes sound, the dots'
+rhythm becomes disturbed.
+
+Features
+--------
+- Mouse interaction: Moving the mouse close to the dots changes their breathing frequency and
+  color, creating a sense of local disturbance within the artwork.
+- Sound input: By default, the program reads microphone volume. The louder the sound, the more
+  intensely the dots "breathe," adding motion and rhythm to the piece.
+- Screenshot export: Press the S key to save the current frame as a high-resolution PNG image
+  at 2x resolution, suitable for printing or portfolio use.
+
+Installation and Running
+------------------------
+Option 1: Run from source code (recommended if you have Processing installed)
+1. Install Processing: https://processing.org/download
+2. Download or unzip the project folder, including the .pde file and any audio/image assets.
+3. Double-click the .pde file to open it in Processing.
+4. Click the Run button in the top-left corner to start the interactive experience.
+
+Option 2: Export as an application
+1. Open the project in Processing.
+2. Click File > Export Application...
+3. Select the target platform, such as macOS or Windows.
+4. The exported .app or .exe can be run directly without installing Processing.
+
+System Requirements
+-------------------
+- Operating system: macOS / Windows / Linux
+- Software environment: Processing 4.x (Java Mode)
+- Microphone permission: System microphone access must be enabled the first time the sketch runs.
+- File structure: The project should include the main .pde file and any required asset folders.
+
+Keyboard Shortcuts
+------------------
+- S: Capture and save a high-resolution screenshot.
+
+File Guide
+----------
+- your_project.pde: Main program source file.
+- /data (optional): Folder for image, audio, and other assets.
+- breathing_wall_HQ_xxxx.png: Saved high-resolution screenshot file.
+
+Notes
+-----
+- If there is no response to sound after running the sketch, check microphone permissions in
+  your system settings.
+- Screenshots are saved to the Sketch Folder. You can open it from Sketch > Show Sketch Folder.
+- If you share the project with others, package the entire project folder, including all assets.
+
+Suggested Uses
+--------------
+- New media art coursework or exhibition prototype.
+- Generative image design tool.
+- Expansion into a spatial interactive experience with lighting, music, or installation design.
+- Teaching example for sound-based interactive programming.
+
+Contact / Discussion
+--------------------
+For collaboration, discussion, or citation, please contact the creator:
+iSDAGE
