@@ -1,0 +1,17 @@
+firworkrain Processing 小作品
+
+打开方式：
+1. 用 Processing 打开 firworkrain.pde。
+2. 点击运行。
+
+互动方式：
+- 初始状态是白色纸面上的普通蓝色雨，雨滴落下会产生浅蓝涟漪和浅蓝水花。
+- 按空格 / 回车：切换到夜晚背景，雨和水花颜色会变成淡黄、浅蓝、白色穿插。
+- 鼠标点击 / 拖动：扰动涟漪；夜晚模式下也会触发水花。
+
+文件说明：
+- firworkrain.pde：主程序。
+- background.jpg：夜晚背景图。
+- firworkrain.mov：原演示视频素材。
+
+这个版本不需要额外库，Processing 默认环境即可运行。
