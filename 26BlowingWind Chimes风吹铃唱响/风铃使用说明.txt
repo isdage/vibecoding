@@ -1,0 +1,53 @@
+打开 blowing_wind_chimes.pde 运行。
+
+画面：
+- 画布尺寸是 600 x 800 像素。
+- 背景图片读取同文件夹里的 background.jpg。
+- 风铃包含：顶部主绳、三颗小圆珠、玻璃体、下方纸条。
+- 吹动后背景会出现白色半透明树叶；声音越大，树叶越多。
+
+交互：
+1. 对着麦克风吹气，风铃会被声音强度吹动。
+2. 越用力吹，风铃和纸条摆动越明显；安静后会慢慢停下来。
+3. 按空格 / 回车，会随机给风铃一次轻推，用来测试摆动。
+
+注意：
+- 需要 Processing 的 Sound 库。
+- 第一次运行时，系统可能会询问麦克风权限，需要允许 Processing 使用麦克风。
+
+常用调整入口：
+- anchorX：整只风铃左右位置。
+- anchorY：风铃顶部悬挂点上下位置。
+- chimeTopY：三颗小圆珠最上方位置。
+- shadeCenterY：玻璃体整体上下位置。
+- stripTopY / stripBottomY：纸条顶部、底部位置，也控制纸条长度。
+- chimeScale：风铃整体大小；现在是 1.0 / 1.2。
+
+声音与摆动：
+- map(activeSound, 0.012, 0.14, 0, 1)：声音灵敏度。前两个数字越小，越容易被吹动。
+- soundWind = gustDirection * blowPower * 1.65：声音转成风力的强度。
+- targetSwing = constrain(wind * 0.22, -0.28, 0.28)：主绳、珠子、玻璃体整体摆动大小。
+- shadeOffset：玻璃体相对主绳的轻微二级摆动。
+- targetStripSwing = swing + wind * 0.22：纸条比主体多出来的倾斜摆动。
+- stripSwingVelocity *= 0.88：纸条阻尼，越接近 1，尾巴拖得越久。
+
+玻璃体：
+- domeW：玻璃体最宽处。
+- domeH：玻璃圆拱高度。
+- bottomY：玻璃体平切底边高度。
+- bottomHalfW：玻璃体底边半宽。
+- chamferStartY：从哪里开始收成底部斜角。
+- whiteGlass / paleGreen：玻璃体渐变颜色。
+
+纸条：
+- stripW：纸条宽度。
+- curve = wind * 18 + sin(frameCount * 0.035) * blowPower * 10：纸条弯曲和飘动幅度。
+- stripTopAlpha：纸条上方透明度。
+- stripBottomAlpha：纸条底部透明度；想让底部更透明就调小。
+
+叶子：
+- maxLeaves：最多同时出现的叶子数量。
+- blowPower > 0.10：开始出现叶子的吹动门槛。
+- leafSpawnDebt += blowPower * 0.34：叶子生成速度。
+- Leaf.reset() 里的 size = random(22, 62)：叶子大小范围。
+- Leaf.reset() 里的 alpha = random(70, 150)：叶子透明度范围。
